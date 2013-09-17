@@ -66,6 +66,5 @@ public class SetUpCuti implements Serializable {
      */
     public void setJatahcuti(int jatahcuti) {
         this.jatahcuti = jatahcuti;
-    }
-    
+    }  
 }

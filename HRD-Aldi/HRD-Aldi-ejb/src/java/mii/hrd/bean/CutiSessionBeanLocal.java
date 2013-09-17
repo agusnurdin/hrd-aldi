@@ -4,6 +4,7 @@
  */
 package mii.hrd.bean;
 
+import java.util.Date;
 import javax.ejb.Local;
 
 /**
@@ -12,5 +13,9 @@ import javax.ejb.Local;
  */
 @Local
 public interface CutiSessionBeanLocal {
+
+    void insertCuti(String alasan, Date mulai, Date selesai, long idKaryawan);
+
+    int getLamaCuti(Date mulai, Date selesai);
     
 }

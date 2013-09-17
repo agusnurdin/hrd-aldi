@@ -22,6 +22,14 @@ public interface KaryawanSessionBeanLocal {
     List<Karyawan> karyawanGetAll();
     List<Karyawan> karyawanGetByNama(String nama);
     List<Karyawan> karyawangetByYear(int year);
+
+    int getJatahCuti(Date hired);
+
+    double getGaji(long id);
+
+    int getLamaKerja(Date hired);
+
+    
     
     
 }
