@@ -4,7 +4,9 @@
  */
 package mii.hrd.bean;
 
+import java.util.List;
 import javax.ejb.Local;
+import mii.hrd.entity.SetUpGaji;
 
 /**
  *
@@ -12,5 +14,13 @@ import javax.ejb.Local;
  */
 @Local
 public interface SetUpGajiSessionBeanLocal {
+
+    void insertSetupGaji(String namaGolongan, double gajiPokok);
+
+    void updateSetupGaji(long id, String namaGolongan, double gajiPokok);
+
+    void deleteSetupGaji(long id);
+
+    List<SetUpGaji> setupGajiGetAll();
     
 }

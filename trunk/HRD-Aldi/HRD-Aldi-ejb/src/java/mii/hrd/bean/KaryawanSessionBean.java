@@ -127,4 +127,40 @@ public class KaryawanSessionBean implements KaryawanSessionBeanLocal {
          KaryawanDAO kdao = new KaryawanDAOImpl(em);
          return kdao.getByYear(year);
     }
+
+    @Override
+    public int getJatahCuti(Date hired) {
+        int jtcuti=0;
+        int hari = this.getLamaKerja(hired);
+        if(hari<365){
+            jtcuti=0;
+        }else if(hari>=365&&hari<1825){
+            jtcuti=12;
+        }else if(hari>=1825){
+            jtcuti=14;
+        }
+        return jtcuti;
+    }
+
+    @Override
+    public double getGaji(long id) {
+        KaryawanDAO kdao = new KaryawanDAOImpl(em);
+        Karyawan k = kdao.getByID(id);
+        int hari = this.getLamaKerja(k.getTanggalHired());
+        //if(hari%365)
+        return k.getGaji().getGajiPokok();
+    }
+
+    @Override
+    public int getLamaKerja(Date hired) {
+        Date now = new Date();
+        int t = ((int)(now.getTime() - hired.getTime()));
+        int hari = t/(1000*60*60*24);
+        return hari;
+    }
+
+    
+    
+    
+   
 }

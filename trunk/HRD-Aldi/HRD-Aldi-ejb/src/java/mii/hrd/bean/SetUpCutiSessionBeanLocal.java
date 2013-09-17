@@ -12,5 +12,7 @@ import javax.ejb.Local;
  */
 @Local
 public interface SetUpCutiSessionBeanLocal {
+
+    void updateSetupCuti(long idKaryawan, int jatahCuti);
     
 }

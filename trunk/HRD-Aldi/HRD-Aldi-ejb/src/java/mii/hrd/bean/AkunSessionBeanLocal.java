@@ -4,7 +4,9 @@
  */
 package mii.hrd.bean;
 
+import java.util.List;
 import javax.ejb.Local;
+import mii.hrd.entity.Akun;
 
 /**
  *
@@ -12,5 +14,9 @@ import javax.ejb.Local;
  */
 @Local
 public interface AkunSessionBeanLocal {
+
+    void changePassword(long idAkun, String password);
+
+    List<Akun> akunGetAll();
     
 }
